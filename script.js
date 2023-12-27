@@ -1,6 +1,7 @@
 let greetings = ["Hello!","Hola!","Bonjour!","Hallo!","Ciao!","你好!","こんにちは!","Привет!","!مرحباً","Γειά σας!","!שָׁלוֹם","Olá!","안녕하세요!","Hej!","Merhaba!","नमस्ते!"]
 
 const greetingText = document.querySelector(".loader__li")
+const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
 
 let index = 0
 
@@ -37,8 +38,7 @@ ease: "ease-in"
 })
 tl.from(".scroll-down",{
     opacity:0,
-    duration:2,
-    delay: .4,
+    delay: .3,
     ease: "ease-in"
 },"a")
 tl.to(".scroll-down",{
@@ -46,6 +46,88 @@ y:10,
 repeat:-1,
 yoyo:true
 },"a")
+
+gsap.from(".page-2__div__about .back--titles, .page-2__div__skills .back--titles",{
+    xPercent:20,
+    yPercent:100,
+    opacity:0,
+    scrollTrigger:{
+        trigger: ".page-2__div__about",
+        // markers:true,
+        start: "top 70%",
+        end:"top 40%",
+        scrub:1
+    }
+})
+gsap.from(".page-2__div",{
+    opacity:0,
+    yPercent:20,
+    // scale:.8,
+    scrollTrigger:{
+        trigger:".page-2__div",
+        // markers:true,
+        scrub:3,
+        start:"top 70%",
+        end:"top 50%",
+    }
+})
+gsap.from(".page-3 > h1",{
+    yPercent:100,
+    opacity:0,
+    scrollTrigger:{
+        trigger:".page-3",
+        // markers:true,
+        start:"top 70%",
+        end: "top 50%",
+        scrub:3
+    }
+})
+
+divCard.forEach((card)=>{
+    gsap.from(card,{
+        y:100,
+        opacity:0,
+        scrollTrigger:{
+            trigger:card,
+            // markers:true,
+            scrub:1,
+            start:"top 70%",
+            end:"top 30%"
+        }
+    })
+})
+
+gsap.from(".footer__top__div",{
+    opacity:0,
+    yPercent:10,
+    duration:1,
+    scrollTrigger:{
+        trigger:".footer",
+        // markers:true,
+        start:"top 60%"
+    }
+})
+
+gsap.from(".footer__bottom__div",{
+    opacity:0,
+    duration:1,
+    scrollTrigger:{
+        trigger:".footer__bottom__div",
+        // markers:true,
+        start:"top bottom",
+        end:"top top"
+    }
+})
+
+gsap.from(".bottom__div__image",{
+    opacity:0,
+    duration:1,
+    scrollTrigger:{
+        trigger:".bottom__div__image",
+        // markers:true,
+        start:"top 90%"
+    }
+})
 
 // Declaring Variables
 const smallCursor = document.querySelector(".small-cursor")
