@@ -47,87 +47,84 @@ repeat:-1,
 yoyo:true
 },"a")
 
-gsap.from(".page-2__div__about .back--titles, .page-2__div__skills .back--titles",{
-    xPercent:20,
-    yPercent:100,
-    opacity:0,
-    scrollTrigger:{
-        trigger: ".page-2__div__about",
-        // markers:true,
-        start: "top 70%",
-        end:"top 40%",
-        scrub:1
-    }
-})
-gsap.from(".page-2__div",{
-    opacity:0,
-    yPercent:20,
-    // scale:.8,
-    scrollTrigger:{
-        trigger:".page-2__div",
-        // markers:true,
-        scrub:3,
-        start:"top 70%",
-        end:"top 50%",
-    }
-})
-gsap.from(".page-3 > h1",{
-    yPercent:100,
-    opacity:0,
-    scrollTrigger:{
-        trigger:".page-3",
-        // markers:true,
-        start:"top 70%",
-        end: "top 50%",
-        scrub:3
-    }
-})
-
-divCard.forEach((card)=>{
-    gsap.from(card,{
-        y:100,
+    gsap.from(".page-2__div__about .back--titles, .page-2__div__skills .back--titles",{
+        // xPercent:20,
+        yPercent:100,
         opacity:0,
         scrollTrigger:{
-            trigger:card,
+            trigger: ".page-2__div",
+            // markers:true,
+            start: "top 70%",
+            end:"top 40%",
+            scrub:1
+        }
+    })
+    gsap.from(".page-2__div",{
+        opacity:0,
+        yPercent:20,
+        // scale:.8,
+        scrollTrigger:{
+            trigger:".page-2__div",
             // markers:true,
             scrub:1,
             start:"top 70%",
-            end:"top 30%"
+            end:"top 50%",
         }
     })
-})
-
-gsap.from(".footer__top__div",{
-    opacity:0,
-    yPercent:10,
-    duration:1,
-    scrollTrigger:{
-        trigger:".footer",
-        // markers:true,
-        start:"top 60%"
-    }
-})
-
-gsap.from(".footer__bottom__div",{
-    opacity:0,
-    duration:1,
-    scrollTrigger:{
-        trigger:".footer__bottom__div",
-        // markers:true,
-        start:"top bottom",
-        end:"top top"
-    }
-})
-
-gsap.from(".bottom__div__image",{
-    opacity:0,
-    duration:1,
-    scrollTrigger:{
-        trigger:".bottom__div__image",
-        // markers:true,
-        start:"top 90%"
-    }
-})
+    gsap.from(".page-3 > h1",{
+        yPercent:100,
+        opacity:0,
+        scrollTrigger:{
+            trigger:".page-3",
+            // markers:true,
+            start:"top 70%",
+            end: "top 50%",
+            scrub:1
+        }
+    })
+    divCard.forEach((card)=>{
+        gsap.from(card,{
+            y:100,
+            opacity:.2,
+            scale:.9,
+            scrollTrigger:{
+                trigger:card,
+                // markers:true,
+                scrub:1,
+                start:"top 70%",
+                end:"top 30%"
+            }
+        })
+    })
+    gsap.from(".footer__top__div",{
+        opacity:0,
+        yPercent:10,
+        duration:1,
+        scrollTrigger:{
+            trigger:".footer",
+            // markers:true,
+            start:"top 60%"
+        }
+    })
+    gsap.from(".footer__bottom__div",{
+        opacity:0,
+        duration:1,
+        scrollTrigger:{
+            trigger:".footer__bottom__div",
+            // markers:true,
+            start:"top bottom",
+            end:"top top"
+        }
+    })
+    gsap.from(".bottom__div__image",{
+        opacity:0,
+        duration:1,
+        scrollTrigger:{
+            trigger:".bottom__div__image",
+            // markers:true,
+            start:"top 90%"
+        }
+    })
 
 // Declaring Variables
 const smallCursor = document.querySelector(".small-cursor")
@@ -172,9 +169,33 @@ headerLinks.forEach(link=>{
     link.addEventListener("mousemove",makeMagnet)
 })
 
-// headerLeft.addEventListener("mousemove",makeMagnet)
+// function debounce(func, delay) {
+//     let timer;
+    
+//     return function() {
+//       const context = this;
+//       const args = arguments;
+      
+//       clearTimeout(timer);
+//       timer = setTimeout(() => {
+//         func.apply(context, args);
+//       }, delay);
+//     };
+//   }
 
 // Cursor Related
 window.addEventListener("mousemove",updateCursorPosition)
 window.addEventListener("mouseout",removeCursor)
 window.addEventListener("click",clickCursor)
+
+// Animation Related
+var docWidth = document.documentElement.offsetWidth;
+
+[].forEach.call(
+  document.querySelectorAll('*'),
+  function(el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  }
+);

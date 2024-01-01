@@ -13,6 +13,7 @@
     margin: 0;
     box-sizing: border-box;
     cursor: none;
+    /* border: 1px solid red !important; */
 }
 
 a{
@@ -55,8 +56,8 @@ body{
     color: var(--color-text);
     font-family: font-1;
     letter-spacing: 1px;
-    overflow-x: hidden;
-    width: 100vw;
+    /* overflow-x: hidden; */
+    /* width: 100vw; */
 }
 
 /* Cursor */
@@ -124,10 +125,6 @@ z-index: 10;
     color: var(--color-loader-text);
 }
 
-.loader__li{
-
-}
-
 /* Header */
 .header{
     z-index: 2;
@@ -157,8 +154,7 @@ overflow: hidden;
 
 .header__left__logo__cont{
     display: flex;
-    width: 100%;
-    gap: 1em;
+    gap: .6em;
     /* background-color: green; */
     transform: translateX(-103%);
     transition: all .6s ease;
@@ -215,8 +211,10 @@ font-size: clamp(1.5625rem, 1.0714rem + 2.4554vw, 5rem);
     inset: 0;
     height: 100vh;
     width: 100%;
+    filter: blur(1px);
     /* border: 1px solid red; */
     -webkit-mask-image: linear-gradient(green,green,green,green,green,green, transparent);
+    mask-image: linear-gradient(green,green,green,green,green,green, transparent);
 }
 
 .hero__div{
@@ -257,7 +255,7 @@ border: 1px solid var(--color-text);
 margin-top: 30px;
 background-color: transparent;
 color: var(--color-text);
-backdrop-filter: blur(2px);
+backdrop-filter: blur(5px);
 letter-spacing: 6px;
 overflow: hidden;
 transition: all .001s ease;
@@ -751,7 +749,7 @@ text-wrap:balance;
     /* border: 1px solid red; */
     translate: 25% 0;
     border-radius: 50%;
-    background: url("https://images.unsplash.com/photo-1653765308446-e8f6d6ea2cc8?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcyfHxhZXN0aGV0aWMlMjBmbG93ZXJzJTIwZ3JlZW58ZW58MHx8MHx8fDA%3D");
+    background: url(./Assets/Images/MeetFooter.png);
     background-position: center;
     background-size: cover;
 }
@@ -768,10 +766,6 @@ border-top: 1px solid #fff;
 }
 
 @media all and (max-width:900px){
-    .cursor, .small-cursor{
-    display: none;
-    }
-
     .page-2{
         padding: 70px 10px;
      }
@@ -929,6 +923,10 @@ border-top: 1px solid #fff;
 }
 
 @media all and (max-width:500px){
+    .cursor, .small-cursor{
+        display: none;
+        }
+    
     .header{
 padding: 1em 1em;
     }
