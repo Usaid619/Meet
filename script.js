@@ -2,16 +2,16 @@
 let index = 0
 let greetings = ["Hello!","Hola!","Bonjour!","Hallo!","Ciao!","你好!","こんにちは!","Привет!","!مرحباً","Γειά σας!","!שָׁלוֹם","Olá!","안녕하세요!","Hej!","Merhaba!","नमस्ते!"]
 const greetingText = document.querySelector(".loader__li")
-const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
 const interval = setInterval(changeGreeting,100)
 const smallCursor = document.querySelector(".small-cursor")
 const cursor = document.querySelector(".cursor")
 const heroDiv = document.querySelector(".hero__div")
 const headerLeft = document.querySelector(".header__left")
-const headerLinks = Array.from(document.querySelectorAll(".header__right__links"))
+const headerLinks = Array.from(document.querySelectorAll(".header__right__links"));
 
 // Declaring Functions
-function startAnimating(){
+(function startAnimating(){
+    const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
     const tl = gsap.timeline()
     tl.to(".loader",{
         yPercent: -100,
@@ -122,7 +122,7 @@ function startAnimating(){
             }
         })
     
-}
+})()
 function changeGreeting(){
     if(index < greetings.length){
          greetingText.innerHTML = greetings[index]
@@ -167,4 +167,3 @@ headerLinks.forEach(link=>{
 window.addEventListener("mousemove",updateCursorPosition)
 window.addEventListener("mouseout",removeCursor)
 window.addEventListener("click",clickCursor)
-window.addEventListener("DOMContentLoaded",startAnimating)
