@@ -7,10 +7,11 @@ const smallCursor = document.querySelector(".small-cursor")
 const cursor = document.querySelector(".cursor")
 const heroDiv = document.querySelector(".hero__div")
 const headerLeft = document.querySelector(".header__left")
-const headerLinks = Array.from(document.querySelectorAll(".header__right__links"));
+const headerLinks = Array.from(document.querySelectorAll(".header__right__links"))
 
 // Declaring Functions
-(function startAnimating(){
+function startAnimating(){
+    console.log("started")
     const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
     const tl = gsap.timeline()
     tl.to(".loader",{
@@ -122,7 +123,8 @@ const headerLinks = Array.from(document.querySelectorAll(".header__right__links"
             }
         })
     
-})()
+}
+
 function changeGreeting(){
     if(index < greetings.length){
          greetingText.innerHTML = greetings[index]
@@ -167,3 +169,5 @@ headerLinks.forEach(link=>{
 window.addEventListener("mousemove",updateCursorPosition)
 window.addEventListener("mouseout",removeCursor)
 window.addEventListener("click",clickCursor)
+window.addEventListener("load",startAnimating)
+window.addEventListener("resize",startAnimating)
