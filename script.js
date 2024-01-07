@@ -11,7 +11,6 @@ const headerLinks = Array.from(document.querySelectorAll(".header__right__links"
 
 // Declaring Functions
 function startAnimating(){
-    console.log("started")
     const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
     const tl = gsap.timeline()
     tl.to(".loader",{
