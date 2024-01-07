@@ -169,5 +169,5 @@ headerLinks.forEach(link=>{
 window.addEventListener("mousemove",updateCursorPosition)
 window.addEventListener("mouseout",removeCursor)
 window.addEventListener("click",clickCursor)
-window.addEventListener("load",startAnimating)
+window.addEventListener("DOMContentLoaded",startAnimating)
 window.addEventListener("resize",startAnimating)
