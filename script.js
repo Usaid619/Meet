@@ -98,7 +98,7 @@ gsap.from(".indi",{
     stagger:0.1,
     scrollTrigger:{
         trigger:".page-2__div",
-        markers:true,
+        // markers:true,
         start:"top 80%",
         end:"top 20%",
         scrub:2
