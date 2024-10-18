@@ -85,6 +85,26 @@ headerLinks.forEach(link=>{
     link.addEventListener("mousemove",makeMagnet)
 })
 
+
+const texts = document.querySelector(".page-2__div__about > span")
+
+const newTexts = texts.textContent.split("").map(char => `<span class="indi">${char}</span>`).join("")
+
+texts.innerHTML = newTexts
+
+gsap.from(".indi",{
+    opacity:0,
+    duration:1,
+    stagger:0.1,
+    scrollTrigger:{
+        trigger:".page-2__div",
+        markers:true,
+        start:"top 80%",
+        end:"top 20%",
+        scrub:2
+    }
+})
+
 // GSAP Animations
 // const divCard = Array.from(document.querySelectorAll(".page-3__div__card"))
 // gsap.from(".page-2__div__about .back--titles, .page-2__div__skills .back--titles",{
