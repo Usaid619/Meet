@@ -193,6 +193,7 @@ font-size: clamp(1.5625rem, 1.0714rem + 2.4554vw, 5rem);
     width: 100%;
     background-position: center;
     background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 
 .hero > img{
