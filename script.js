@@ -8,6 +8,8 @@ const cursor = document.querySelector(".cursor")
 const heroDiv = document.querySelector(".hero__div")
 const headerLeft = document.querySelector(".header__left")
 const headerLinks = Array.from(document.querySelectorAll(".header__right__links"))
+const currentDate = document.querySelector("#current-date")
+
 
 // Declaring Functions
 function startAnimating(){
@@ -85,6 +87,11 @@ headerLinks.forEach(link=>{
     link.addEventListener("mousemove",makeMagnet)
 })
 
+// Updating Dom
+const now = new Date()
+const year = now.getFullYear()
+
+currentDate.innerHTML = year
 
 const texts = document.querySelector(".page-2__div__about > span")
 
