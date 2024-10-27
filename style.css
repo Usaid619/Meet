@@ -485,7 +485,8 @@ min-height: 100vh;
     height: 100%;
     width: 100%;
     padding: .65em 5.6em 3.8em 5.6em;
-    background-color: rgba(0, 0, 0,0.2);
+    /* background-color: rgba(0, 0, 0,0.2); */
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8));
     backdrop-filter: blur(30px);
     opacity: 0;
     overflow: hidden;
