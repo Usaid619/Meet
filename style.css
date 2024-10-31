@@ -693,7 +693,8 @@ text-align: center;
     display: flex;
     justify-content: space-between;
     gap: 5px;
-padding: 20px 0 10px 30px;
+padding: 1em 0em .2em 0;
+font-size: clamp(0.625rem, 0.4028rem + 1.1111vw, 2.25rem);
 border-top: 1px solid #fff;
 }
 
