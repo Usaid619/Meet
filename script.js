@@ -78,14 +78,19 @@ function makeMagnet(e){
     const moveY = e.offsetY - this.clientHeight / 2
 
     this.style.transform = `translate(${moveX}px,${moveY}px)`
+}
 
-    this.addEventListener("mouseleave",(e)=>{
-        this.style.transform = `translate(0)`
+function initMagnet(){
+    headerLinks.forEach(link=>{
+        link.addEventListener("mousemove",makeMagnet)
+    })
+    
+    headerLinks.forEach(link=>{
+        link.addEventListener("mouseleave",()=>{
+             link.style.transform = `translate(0)`
+        })
     })
 }
-headerLinks.forEach(link=>{
-    link.addEventListener("mousemove",makeMagnet)
-})
 
 // Updating Dom
 const now = new Date()
@@ -198,3 +203,4 @@ window.addEventListener("mousemove",updateCursorPosition)
 window.addEventListener("mouseout",removeCursor)
 window.addEventListener("click",clickCursor)
 window.addEventListener("DOMContentLoaded",startAnimating)
+window.addEventListener("DOMContentLoaded",initMagnet)
