@@ -290,7 +290,7 @@ width: min-content;
 }
 
 .scroll-down__text{
-color: #ffffff;
+color: rgb(255, 255, 255);
 font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.875rem);
 font-weight: 100;
 }
